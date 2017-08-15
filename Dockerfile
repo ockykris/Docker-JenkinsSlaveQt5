@@ -1,7 +1,7 @@
 FROM kristant/docker-jenkinsslave:trusty
 
-ARG QT=5.3.1
-ARG QTM=5.3
+ARG QT=5.9.1
+ARG QTM=5.9
 ARG VCS_REF
 ARG BUILD_DATE
 
