@@ -1,0 +1,1 @@
+# Docker-JenkinsSlaveQt5
