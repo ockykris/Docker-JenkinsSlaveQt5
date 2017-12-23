@@ -1,4 +1,4 @@
-FROM kristant/docker-jenkinsslave
+FROM kristant/docker-jenkinsslave:trusty
 
 ARG QT=5.9.1
 ARG QTM=5.9
