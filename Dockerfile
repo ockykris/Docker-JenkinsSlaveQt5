@@ -5,7 +5,7 @@ ARG QTM=5.3
 ARG VCS_REF
 ARG BUILD_DATE
 
-USER root
+USER jenkins
 
 LABEL org.label-schema.build-date="$BUILD_DATE" \
       org.label-schema.name="qt-build" \
