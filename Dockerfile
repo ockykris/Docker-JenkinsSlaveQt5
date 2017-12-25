@@ -34,7 +34,9 @@ RUN apt-get update -q && \
 	python \
     && apt-get clean
 
-USER jenkins
+ENV HOME /home/jenkins
+RUN addgroup -S -g 10000 jenkins
+RUN adduser -S -u 10000 -h $HOME -G jenkins jenkins
 
 ADD qt-installer-noninteractive.qs /tmp/qt/script.qs
 ADD https://download.qt.io/archive/qt/${QTM}/${QT}/qt-opensource-linux-x64-${QT}.run /tmp/qt/installer.run
