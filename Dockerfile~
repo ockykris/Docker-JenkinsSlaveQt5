@@ -34,6 +34,10 @@ RUN apt-get update -q && \
 	python \
     && apt-get clean
 
+# Set user jenkins to the image
+RUN useradd -m -d /home/jenkins -s /bin/sh jenkins &&\
+    echo "jenkins:jenkins" | chpasswd
+
 ADD qt-installer-noninteractive.qs /tmp/qt/script.qs
 ADD https://download.qt.io/archive/qt/${QTM}/${QT}/qt-opensource-linux-x64-${QT}.run /tmp/qt/installer.run
 
