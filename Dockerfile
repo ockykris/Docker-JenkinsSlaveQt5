@@ -5,7 +5,7 @@ ARG QTM=5.3
 ARG VCS_REF
 ARG BUILD_DATE
 
-USER jenkins
+USER root
 
 LABEL org.label-schema.build-date="$BUILD_DATE" \
       org.label-schema.name="qt-build" \
@@ -33,6 +33,8 @@ RUN apt-get update -q && \
         xvfb \
 	python \
     && apt-get clean
+
+USER jenkins
 
 ADD qt-installer-noninteractive.qs /tmp/qt/script.qs
 ADD https://download.qt.io/archive/qt/${QTM}/${QT}/qt-opensource-linux-x64-${QT}.run /tmp/qt/installer.run
